@@ -17,6 +17,22 @@
 			  cursor: pointer;
 			}
 		</style>
+		<script>
+			function randomize_Gamemode()
+			{
+				const mode = [
+					"Yordles", 
+					"Boys vs. Girls", 
+					"Red vs. Blue", 
+					"Ionia vs Noxus", 
+					"Tanks Only", 
+					"Favorite Skin", 
+					"Most Played Champ",
+					"Random"];
+				const rand_num = Math.floor(Math.random() * mode.length);
+				document.getElementById("new_Mode").innerHTML = mode[rand_num];
+			}
+		</script>
 		<title>LOL ROLLS</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -30,8 +46,9 @@
 					<div class="content">
 						<header>
 							<h2>LOL ROLLS</h2>
-							<p>Click to roll a random gamemode!</p>
-							<button class="button" onclick="window.location.href='https://google.com';">Randomize</button>
+							<p>Click to roll a random gamemode:</p>
+							<button class="button" onclick="randomize_Gamemode()">Randomize</button>
+							<div id="new_Mode"><h2>...</h2></div>
 						</header>
 						<span class="image"><img src="images/pic01.png" alt="" /></span>
 					</div>
